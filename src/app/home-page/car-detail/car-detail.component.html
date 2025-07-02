@@ -1,0 +1,160 @@
+<div class="mt-4" *ngIf="car">
+  <div class="row">
+    <div class="col-md-4">
+      <!-- Katta rasm -->
+      <div class="main-image mb-3">
+        <img
+          [src]="activeImage"
+          class="img-fluid rounded"
+          alt="Active car image"
+        />
+      </div>
+
+      <!-- 1 qator, 5 ta thumbnail, scrollable -->
+      <div class="thumbnail-gallery">
+        <img
+          *ngFor="let img of thumbnails"
+          [src]="img"
+          (click)="setActiveImage(img)"
+          alt="Thumbnail"
+        />
+      </div>
+    </div>
+
+    <!-- O'ng ma'lumotlar qismi (8 col) -->
+    <div class="col-md-8">
+      <!-- Brand va nomi -->
+      <div class="d-flex align-items-center gap-2 mb-3">
+        <img [src]="car.imageBrand" alt="Brand" height="40" />
+        <h3 class="mb-0">{{ car.carName }}</h3>
+        <span class="ms-auto fs-4 fw-bold text-danger"
+          >{{ car.daytax }} <small>UZS</small></span
+        >
+      </div>
+
+      <!-- Xususiyatlar -->
+      <h5 class="mt-3">XUSUSIYATLAR</h5>
+      <div class="d-flex spec-gallery mb-3">
+        <div
+          *ngFor="let spec of car.specs"
+          class="spec-item d-flex align-items-center"
+        >
+          <img [src]="spec.icon" alt="icon" class="spec-icon" />
+          <span>{{ spec.label }}</span>
+        </div>
+      </div>
+
+      <!-- Tariflar -->
+      <h5 class="mt-3">Tariflar</h5>
+      <div class="d-flex flex-wrap gap-3 mb-3">
+        <div
+          *ngFor="let tariff of car.tariffs"
+          class=" rounded px-3 py-2 spec-tariff d-flex align-items-center"
+        >
+          <span>{{ tariff.label }}  </span>
+          <strong class="ms-2">{{ tariff.price }}  <span class="text-danger fs-5">uzs</span></strong>
+        </div>
+      </div>
+
+      <!-- Qo‘shimcha info -->
+      <div class="mb-3 gap-3 d-flex">
+        <p class=""><strong>Garov:</strong> {{ car.deposit }} uzs</p>
+        <p><strong>Limit:</strong> 300 km/kun</p>
+      </div>
+    </div>
+  </div>
+
+
+  <h2 class="mt-3 fw-bold">O'xshash Avtomobillar</h2>
+
+
+<!-- O‘xshash avtomobillar -->
+  <div class="body-catalog">
+    <div
+      class="catalog-item"
+      *ngFor="let car of filterCars()"
+    >
+      <div class="catalog-item__top">
+        <a class="catalog-item__top-link">
+          <img
+            alt="car"
+            class="catalog-item__img"
+            loading="lazy"
+            src="assets/cars/spark_feature/3.jpeg"
+          />
+          <div class="catalog-item__price">
+            <span>nameCar.daytax</span> uzs kuniga
+          </div>
+        </a>
+      </div>
+
+      <!-- Kontent -->
+      <div class="catalog-item__content">
+        <a class="catalog-item__header">
+          <div class="catalog-item__title">nameCar.carName</div>
+          <img
+            src="assets/car_brands_logo/chevrolet.png"
+            alt="car-logo"
+            class="catalog-item__logo"
+          />
+        </a>
+
+        <div class="catalog-item__list">
+          <div class="catalog-item__list-item">
+            Garov: <span>nameCar.deposit uzs</span>
+          </div>
+          <div class="catalog-item__list-item">
+            Limit: <span>300 km/kun</span>
+          </div>
+        </div>
+
+        <div class="catalog-item__bullets">
+          <div class="catalog-item__bullet">
+            <img
+              src="https://rentcar.uz/frontend/assets/images/icons/air-conditioner.svg"
+              alt="bullet"
+              class="catalog-item__bullet-img"
+            />
+            <div class="catalog-item__bullet-txt">A/C</div>
+            <div class="tooltip">Conditioner</div>
+          </div>
+          <div class="catalog-item__bullet">
+            <img
+              src="https://rentcar.uz/frontend/assets/images/icons/chair.svg"
+              alt="bullet"
+              class="catalog-item__bullet-img"
+            />
+            <div class="atalog-item__bullet-txt">5</div>
+            <div class="tooltip">Number of seats</div>
+          </div>
+          <div class="catalog-item__bullet">
+            <img
+              src="https://rentcar.uz/frontend/assets/images/icons/bag.svg"
+              alt="bullet"
+              class="catalog-item__bullet-img"
+            />
+            <div class="catalog-item__bullet-txt">1</div>
+            <div class="tooltip">A large bag</div>
+          </div>
+          <div class="catalog-item__bullet">
+            <img
+              src="https://rentcar.uz/frontend/assets/images/icons/bag.svg"
+              alt="bullet"
+              class="catalog-item__bullet-img"
+            />
+            <div class="catalog-item__bullet-txt">2</div>
+            <div class="tooltip">Small bag</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="catalog-item__buttons">
+        <a
+          class="catalog-item__button"
+          (click)="goToCar(3)"
+        >
+          Hozir bron qiling
+        </a>
+      </div>
+    </div>
+  </div>

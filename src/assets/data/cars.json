@@ -1,0 +1,278 @@
+[
+  {
+    "id": 1,
+    "category": "budget",
+    "categoryId": 0,
+    "image": "assets/cars/spark.jpeg",
+    "daytax": "300 000",
+    "carName": "CHEVROLET SPARK",
+    "imageBrand": "assets/car_brands_logo/chevrolet.png",
+    "deposit": "3 000 000",
+    "images": [
+      "assets/cars/spark_feature/1.jpeg",
+      "assets/cars/spark_feature/2.jpeg",
+      "assets/cars/spark_feature/3.jpeg",
+      "assets/cars/spark_feature/4.jpeg",
+      "assets/cars/spark_feature/5.jpeg"
+    ],
+    "specs": [
+      { "icon": "assets/car_icons/air-conditioner.svg", "label": "A/C" },
+      { "icon": "assets/car_icons/chair.svg", "label": "4 o'rin" },
+      { "icon": "assets/car_icons/bag.svg", "label": "1 katta sumka" },
+      { "icon": "assets/car_icons/bag.svg", "label": "2 kichik sumka" },
+      { "icon": "assets/car_icons/gear.svg", "label": "Avtomatik uzatish" },
+      { "icon": "assets/car_icons/parking.svg", "label": "Parkovka sensorlari"},
+      { "icon": "assets/car_icons/abc.svg", "label": "ABC" },
+      { "icon": "assets/car_icons/airbag.svg", "label": "Xavfsizlik yostig'i" }
+    ],
+    "tariffs": [
+      {"label": "1 - 3 kunlar", "price": "300 000"},
+      {"label": "4 kunlar - 1 hafta", "price": "285 000"},
+      {"label": "1 - 2 haftalar", "price": "275 000"},
+      {"label": "15 kunlar - 1 oy", "price": "250 000"}
+    ]
+  },
+  {
+    "id": 2,
+    "category": "budget",
+    "image": "assets/cars/nexia-3.jpeg",
+    "daytax": "350 000",
+    "carName": "NEXIA 3",
+    "imageBrand": "assets/car_brands_logo/chevrolet.png",
+    "deposit": "3 000 000"
+  },
+  {
+    "id": 3,
+    "category": "budget",
+    "image": "assets/cars/cobalt.jpeg",
+    "daytax": "400 000",
+    "carName": "CHEVROLET COBALT",
+    "imageBrand": "assets/car_brands_logo/chevrolet.png",
+    "deposit": "3 000 001"
+  },
+  {
+    "id": 4,
+    "category": "budget",
+    "image": "assets/cars/lacetti.jpeg",
+    "daytax": "450 000",
+    "carName": "CHEVROLET LACETTI",
+    "imageBrand": "assets/car_brands_logo/chevrolet.png",
+    "deposit": "3 000 000"
+  },
+  {
+    "id": 5,
+    "category": "budget",
+    "image": "assets/cars/onix.jpeg",
+    "daytax": "600 000",
+    "carName": "CHEVROLET ONIX LTZ TURBO AT",
+    "imageBrand": "assets/car_brands_logo/chevrolet.png",
+    "deposit": "3 000 000"
+  },
+  {
+    "id": 6,
+    "category": "budget",
+    "image": "assets/cars/monza.jpg",
+    "daytax": "600 000",
+    "carName": "CHEVROLET MONZA",
+    "imageBrand": "assets/car_brands_logo/chevrolet.png",
+    "deposit": "3 000 000"
+  },
+  {
+    "id": 7,
+    "category": "Crossover",
+    "image": "assets/cars/captiva.jpeg",
+    "daytax": "700 000",
+    "carName": "CHEVROLET CAPTIVA4",
+    "imageBrand": "assets/car_brands_logo/chevrolet.png",
+    "deposit": "3 000 000"
+  },
+  {
+    "id": 8,
+    "category": "Minivan",
+    "image": "assets/cars/sienna.jpg",
+    "daytax": "1 000 000",
+    "carName": "TOYOTA SIENNA",
+    "imageBrand": "assets/car_brands_logo/toyota.png",
+    "deposit": "4 000 000"
+  },
+  {
+    "id": 9,
+    "category": "Crossover",
+    "image": "assets/cars/tracker-2.jpeg",
+    "daytax": "700 000",
+    "carName": "CHEVROLET TRACKER 2",
+    "imageBrand": "assets/car_brands_logo/chevrolet.png",
+    "deposit": "4 000 000"
+  },
+  {
+    "id": 10,
+    "category": "Crossover",
+    "image": "assets/cars/kia-sonet.jpeg",
+    "daytax": "700 000",
+    "carName": "NEXIA 3",
+    "imageBrand": "assets/car_brands_logo/kia.png",
+    "deposit": "4 000 000"
+  },
+  {
+    "id": 11,
+    "category": "Minivan",
+    "image": "assets/cars/orlando.jpeg",
+    "daytax": "800 000",
+    "carName": "ORLANDO REDLINE 530T",
+    "imageBrand": "assets/car_brands_logo/chevrolet.png",
+    "deposit": "4 000 000"
+  },
+  {
+    "id": 12,
+    "category": "SUVs",
+    "image": "assets/cars/prado-120.jpeg",
+    "daytax": "750 000",
+    "carName": "TOYOTA PRADO 120",
+    "imageBrand": "assets/car_brands_logo/toyota.png",
+    "deposit": "4 000 000"
+  },
+  {
+    "id": 13,
+    "category": "Premium",
+    "image": "assets/cars/chazor.jpeg",
+    "daytax": "1 000 000",
+    "carName": "BYD CHAZOR DM1",
+    "imageBrand": "assets/car_brands_logo/BYD.png",
+    "deposit": "4 000 000"
+  },
+  {
+    "id": 14,
+    "category": "Minivan",
+    "image": "assets/cars/carnival.jpg",
+    "daytax": "1 100 000",
+    "carName": "KIA CARNIVAL",
+    "imageBrand": "assets/car_brands_logo/kia.png",
+    "deposit": "4 000 000"
+  },
+  {
+    "id": 15,
+    "category": "Premium",
+    "image": "assets/cars/k5.jpeg",
+    "daytax": "1 200 000",
+    "carName": "KIA K5",
+    "imageBrand": "assets/car_brands_logo/kia.png",
+    "deposit": "4 000 000"
+  },
+  {
+    "id": 16,
+    "category": "Premium",
+    "image": "assets/cars/malibu.jpeg",
+    "daytax": "1 200 000",
+    "carName": "CHEVROLET MALIBU 2",
+    "imageBrand": "assets/car_brands_logo/chevrolet.png",
+    "deposit": "4 000 000"
+  },
+  {
+    "id": 17,
+    "category": "Crossover",
+    "image": "assets/cars/songplus.jpeg",
+    "daytax": "1 200 000",
+    "carName": "BYD SONG PLUS",
+    "imageBrand": "assets/car_brands_logo/BYD.png",
+    "deposit": "4 000 000"
+  },
+  {
+    "id": 18,
+    "category": "Crossover",
+    "image": "assets/cars/tucson.png",
+    "daytax": "1 400 000",
+    "carName": "HYUNDAI TUCSON",
+    "imageBrand": "assets/car_brands_logo/HYUNDAI.png",
+    "deposit": "4 000 000"
+  },
+  {
+    "id": 19,
+    "category": "SUVs",
+    "image": "assets/cars/prado-150.jpeg",
+    "daytax": "1 100 000",
+    "carName": "TOYOTA PRADO 150",
+    "imageBrand": "assets/car_brands_logo/toyota.png",
+    "deposit": "4 000 000"
+  },
+  {
+    "id": 20,
+    "category": "SUVs",
+    "image": "assets/cars/trailblazer.jpeg",
+    "daytax": "1 500 000",
+    "carName": "CHEVROLET TRAILBLAZER LTZ AT",
+    "imageBrand": "assets/car_brands_logo/chevrolet.png",
+    "deposit": "4 000 000"
+  },
+  {
+    "id": 21,
+    "category": "Pick_UPs",
+    "image": "assets/cars/irbis.jpeg",
+    "daytax": "1 500 000",
+    "carName": "ISUZU D MAX IRBIS AT",
+    "imageBrand": "assets/car_brands_logo/ISUZU.png",
+    "deposit": "3 000 000"
+  },
+  {
+    "id": 22,
+    "category": "Crossover",
+    "image": "assets/cars/equnox.jpeg",
+    "daytax": "1 400 000",
+    "carName": "CHEVROLET EQUINOX",
+    "imageBrand": "assets/car_brands_logo/chevrolet.png",
+    "deposit": "4 000 000"
+  },
+  {
+    "id": 23,
+    "category": "Crossover",
+    "image": "assets/cars/kodiaq.jpeg",
+    "daytax": "1 200 000",
+    "carName": "SKODA KODIAQ STYLE",
+    "imageBrand": "assets/car_brands_logo/skoda.png",
+    "deposit": "4 000 000"
+  },
+  {
+    "id": 24,
+    "category": "SUVs",
+    "image": "assets/cars/landcruiser200.jpeg",
+    "daytax": "2 600 000",
+    "carName": "TOYOTA LAND CRUISER 200",
+    "imageBrand": "assets/car_brands_logo/toyota.png",
+    "deposit": "5 000 000"
+  },
+  {
+    "id": 25,
+    "category": "Premium",
+    "image": "assets/cars/li9.jpeg",
+    "daytax": "3 000 000",
+    "carName": "LIXIANG L9 ULTRA",
+    "imageBrand": "assets/car_brands_logo/Lixang.png",
+    "deposit": "5 000 000"
+  },
+  {
+    "id": 26,
+    "category": "Minivan",
+    "image": "assets/cars/karnivalG031.jpg",
+    "daytax": "1 800 000",
+    "carName": "KIA CARNIVAL G03I",
+    "imageBrand": "assets/car_brands_logo/kia.png",
+    "deposit": "4 000 000"
+  },
+  {
+    "id": 27,
+    "category": "SUVs",
+    "image": "assets/cars/landcruiser300.jpeg",
+    "daytax": "3 800 000",
+    "carName": "TOYOTA LAND CRUISER 300SFX A1",
+    "imageBrand": "assets/car_brands_logo/toyota.png",
+    "deposit": "5 000 000"
+  },
+  {
+    "id": 28,
+    "category": "SUVs",
+    "image": "assets/cars/G400d.jpg",
+    "daytax": "7 200 000",
+    "carName": "MERCEDEC BENZ G400d",
+    "imageBrand": "assets/car_brands_logo/mercedes-benz.png",
+    "deposit": "10 000 000"
+  }
+]

@@ -1,0 +1,28 @@
+<div class="container">
+    <p-tabs value="0">
+      <p-tablist>
+        <p-tab value="0">Home Page</p-tab>
+        <p-tab value="1">Create a car</p-tab>
+        <p-tab value="2">List</p-tab>
+        <p-tab value="3" >Admin</p-tab>
+      </p-tablist>
+      <p-tabpanels>
+        <p-tabpanel value="0">
+          <app-home-page></app-home-page>
+        </p-tabpanel>
+        <p-tabpanel value="1">
+          <app-create-car-list></app-create-car-list>
+        </p-tabpanel>
+        <p-tabpanel value="2">
+          <app-list></app-list>
+        </p-tabpanel>
+        <p-tabpanel value="3">
+          <app-admin></app-admin>
+        </p-tabpanel>
+      </p-tabpanels>
+    </p-tabs>
+    
+    <router-outlet></router-outlet>
+    
+  </div>
+  

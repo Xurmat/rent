@@ -1,0 +1,54 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>FirstName</th>
+      <th>LastName</th>
+      <th>Phone Number</th>
+      <th>Car Model</th>
+      <th>Status</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngIf="reservationList.length === 0">
+      <td
+        colspan="6"
+        class="text-center text-danger-emphasis border-white bg-danger-subtle rounded-pill"
+      >
+        No reservation found
+      </td>
+    </tr>
+    <tr *ngFor="let item of reservationList; trackBy: trackById">
+      <td>{{ item.clientFirstName }}</td>
+      <td>{{ item.clientLastName }}</td>
+      <td>{{ item.clientNumber }}</td>
+      <td>{{ item.carModel }}</td>
+      <td>
+        <span
+          [ngClass]="{
+            'text-warning': item.status === 'pending',
+            'text-success': item.status === 'accepted',
+            'text-danger': item.status === 'cancelled'
+          }"
+        >
+          {{ item.status }}
+        </span>
+      </td>
+      <td>
+        <button
+          class="btn btn-sm btn-danger mx-1"
+          (click)="deleteReservation(item.id)"
+        >
+          Delete
+        </button>
+        <button
+          class="btn btn-sm btn-warning mx-1 me-1"
+          [routerLink]="['/edit', item.id]"
+        >
+          Edit
+        </button>
+        
+      </td>
+    </tr>
+  </tbody>
+</table>

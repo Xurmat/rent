@@ -1,0 +1,24 @@
+<ng-container *ngIf="pendingReservations.length > 0; else noData">
+  <div *ngFor="let res of pendingReservations" class="card mb-3">
+    <div class="card-body">
+      <h5 class="card-title">
+        {{ res.clientFirstName }} {{ res.clientLastName }}
+      </h5>
+      <p class="card-text">Telefon raqami: {{ res.clientNumber }}</p>
+      <p class="card-text">Avtomobil: {{ res.carModel }}</p>
+
+      <button class="btn btn-success me-2" (click)="accept(res)">Accept</button>
+      <button class="btn btn-danger" (click)="cancel(res)">Cancel</button>
+    </div>
+  </div>
+</ng-container>
+
+<ng-template #noData>
+  <table class="table">
+    <tr>
+      <td colspan="6" class="text-center text-danger-emphasis border-white bg-danger-subtle rounded-pill fs-4">
+        No information has been entered here yet.
+      </td>
+    </tr>
+  </table>
+</ng-template>

@@ -1,0 +1,116 @@
+<div class="card text-center">
+  <div class="row flex mb-5">
+    <div class="d-flex align-items-center img-item-size-conatiner">
+      <div
+        *ngFor="let car of carsbrands"
+        class="img-item img-item-size"
+        (click)="selectCategory(car.title)"
+      >
+        <img src="{{ car.image }}" />
+        <br />
+        <span
+          class="mt-2-5 category-label"
+          [class.active]="selectedCategory === car.title"
+        >
+          {{ car.title }}
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <h1 class="mb-5">Bizdan eng yaxshi takliflar</h1>
+
+  <div class="body-catalog">
+    <div
+      class="catalog-item"
+      *ngFor="let nameCar of filteredCars"
+      (click)="showCarDetail(nameCar)"
+    >
+      <div class="catalog-item__top">
+        <a class="catalog-item__top-link">
+          <img
+            alt="car"
+            class="catalog-item__img"
+            loading="lazy"
+            [src]="nameCar.image"
+          />
+          <div class="catalog-item__price">
+            <span>{{ nameCar.daytax }}</span> uzs kuniga
+          </div>
+        </a>
+      </div>
+
+      <!-- Kontent -->
+      <div class="catalog-item__content">
+        <a class="catalog-item__header">
+          <div class="catalog-item__title">{{ nameCar.carName }}</div>
+          <img
+            [src]="nameCar.imageBrand"
+            alt="car-logo"
+            class="catalog-item__logo"
+          />
+        </a>
+
+        <div class="catalog-item__list">
+          <div class="catalog-item__list-item">
+            Garov: <span>{{ nameCar.deposit }} uzs</span>
+          </div>
+          <div class="catalog-item__list-item">
+            Limit: <span>300 km/kun</span>
+          </div>
+        </div>
+
+        <div class="catalog-item__bullets">
+          <div class="catalog-item__bullet">
+            <img
+              src="https://rentcar.uz/frontend/assets/images/icons/air-conditioner.svg"
+              alt="bullet"
+              class="catalog-item__bullet-img"
+            />
+            <div class="catalog-item__bullet-txt">A/C</div>
+            <div class="tooltip">Conditioner</div>
+          </div>
+          <div class="catalog-item__bullet">
+            <img
+              src="https://rentcar.uz/frontend/assets/images/icons/chair.svg"
+              alt="bullet"
+              class="catalog-item__bullet-img"
+            />
+            <div class="atalog-item__bullet-txt">5</div>
+            <div class="tooltip">Number of seats</div>
+          </div>
+          <div class="catalog-item__bullet">
+            <img
+              src="https://rentcar.uz/frontend/assets/images/icons/bag.svg"
+              alt="bullet"
+              class="catalog-item__bullet-img"
+            />
+            <div class="catalog-item__bullet-txt">1</div>
+            <div class="tooltip">A large bag</div>
+          </div>
+          <div class="catalog-item__bullet">
+            <img
+              src="https://rentcar.uz/frontend/assets/images/icons/bag.svg"
+              alt="bullet"
+              class="catalog-item__bullet-img"
+            />
+            <div class="catalog-item__bullet-txt">2</div>
+            <div class="tooltip">Small bag</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="catalog-item__buttons">
+        <a
+          href="#searchForm"
+          class="catalog-item__button"
+          id="bookNowButton"
+          (click)="($event)"
+        >
+          Hozir bron qiling
+        </a>
+      </div>
+
+    </div>
+  </div>
+</div>
