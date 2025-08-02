@@ -1,9 +1,9 @@
-import { NgIf, NgFor } from '@angular/common';
-import { Component, Input, OnDestroy, signal } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit, signal } from '@angular/core';
 import { ActivatedRoute, Router, ParamMap } from '@angular/router';
 import { CarService } from '../../services/car.service';
 import { Car } from '../../models/car';
 import { Subscription } from 'rxjs';
+import { NgIf, NgFor } from '@angular/common';
 
 @Component({
   selector: 'app-car-detail',
@@ -12,39 +12,52 @@ import { Subscription } from 'rxjs';
   styleUrl: './car-detail.component.scss',
   imports: [NgFor, NgIf],
 })
-export class CarDetailComponent implements OnDestroy {
-  car?: Car;
-  cars: any;
-  filterCars = signal([]);
+export class CarDetailComponent implements OnInit, OnDestroy {
+  @Input() car!: Car;
+  similarCars: Car[] = [];
+  filterCars = signal<Car[]>([]);
   activeImage: string = '';
   private sub!: Subscription;
 
-  constructor(private route: ActivatedRoute, private router: Router, private carService: CarService) {
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private carService: CarService
+  ) {}
+
+  ngOnInit(): void {
     this.sub = this.route.paramMap.subscribe((params: ParamMap) => {
       const id = +params.get('id')!;
       if (id) {
-        this.carService.getCarById(id).subscribe((car) => {
-          if (car) {
-            this.car = car;
-            this.activeImage = car.images?.[0] || '';
-            this.setFilterCars(car?.categoryId);
-          }
+        this.loadCar(id);
+      }
+    });
+  }
+
+  private loadCar(id: number): void {
+    this.carService.getCarById(id).subscribe((car) => {
+      if (car) {
+        this.car = car;
+        this.activeImage = car.images?.[0] || '';
+        this.carService.getCars().subscribe((allCars) => {
+          this.setFilterCars(car.categoryId, allCars);
         });
       }
     });
   }
 
-  ngOnInit(): void {
-    this.carService.getCars().subscribe((data :any) => {
-      this.cars = data;
-    });
+  setFilterCars(categoryId: number, cars: Car[]): void {
+    if (categoryId && cars) {
+      const filtered = cars.filter((car) => car.categoryId === categoryId && car.id !== this.car.id);
+      this.filterCars.set(filtered);
+    }
   }
 
-  ngOnDestroy(): void {
-    this.sub.unsubscribe();
+  getCarImage(car: Car): string {
+    return car.image || car.images?.[0] || 'assets/default-car.jpg';
   }
 
-  setActiveImage(img: string) {
+  setActiveImage(img: string): void {
     this.activeImage = img;
   }
 
@@ -54,23 +67,29 @@ export class CarDetailComponent implements OnDestroy {
       : [];
   }
 
-  goToCar(id: number) {
+  goToCar(id: number): void {
     this.router.navigate(['/cars', id]);
   }
 
-  setFilterCars(categoryId: number) {
-    if (!this.cars) {
-      const checkInterval = setInterval(() => {
-        if (this.cars) {
-          const filtered = this.cars.filter((car: Car) => car.categoryId === categoryId);
-          this.filterCars.set(filtered);
-          clearInterval(checkInterval);
-        }
-      }, 100);
-      return;
+  ngOnDestroy(): void {
+    if (this.sub) {
+      this.sub.unsubscribe();
     }
-  
-    const filtered = this.cars.filter((car: Car) => car.categoryId === categoryId);
-    this.filterCars.set(filtered);
   }
+
+  get parsedBullets() {
+    return this.car?.specs?.slice(0, 4).map((spec, i) => {
+      if (i === 0) {
+        return { icon: spec.icon, text: spec.label }; // faqat 1-element uchun text
+      } else {
+        const number = spec.label.split(' ')[0]; // faqat raqam
+        return { icon: spec.icon, number };
+      }
+    }) || [];
+  }
+  
+  
+  
+  
+  
 }

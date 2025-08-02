@@ -7,6 +7,7 @@ import { CarService } from '../services/car.service';
 @Component({
   selector: 'app-home-page',
   imports: [NgFor],
+  standalone: true,
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.scss',
 })
@@ -24,10 +25,11 @@ export class HomePageComponent implements OnInit {
     { title: 'budget', image: 'assets/car_brands/nexia-3.png' },
     { title: 'Premium', image: 'assets/car_brands/malibu-2.png' },
     { title: 'Crossover', image: 'assets/car_brands/equnox.png' },
-    { title: "SUVs", image: 'assets/car_brands/Land_cruser.png' },
+    { title: 'SUVs', image: 'assets/car_brands/Land_cruser.png' },
     { title: 'Minivan', image: 'assets/car_brands/Minivenlar.png' },
     { title: 'Pick UPs', image: 'assets/car_brands/pikap.png' },
   ];
+  
 
   ngOnInit() {
     this.carService.getCars().subscribe((data) => {
@@ -42,12 +44,13 @@ export class HomePageComponent implements OnInit {
       this.selectedCategory = category;
     }
   }
+  
 
-  get filteredCars() {
-    if (!this.selectedCategory) {
-      return this.cars;
-    }
-    return this.cars.filter((car) => car.category === this.selectedCategory);
+  get filteredCars(): Car[] {
+    const list = this.selectedCategory
+      ? this.cars.filter(car => car.category === this.selectedCategory)
+      : this.cars;
+    return list;
   }
 
   showCarDetail(car: any) {
